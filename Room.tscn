@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://player/Player.png" type="Texture" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://assets/desk.png" type="Texture" id=4]
 [ext_resource path="res://assets/room_background.png" type="Texture" id=5]
 [ext_resource path="res://assets/room_bed (1).png" type="Texture" id=6]
-[ext_resource path="res://assets/room_desk (1).png" type="Texture" id=7]
+[ext_resource path="res://Earphones.gd" type="Script" id=7]
 [ext_resource path="res://assets/room_chair (1).png" type="Texture" id=8]
+[ext_resource path="res://assets/room_earphones.png" type="Texture" id=9]
+[ext_resource path="res://assets/room_desk_empty.png" type="Texture" id=10]
+[ext_resource path="res://assets/q_mark.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
@@ -18,7 +21,7 @@ resource_name = "Idle"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -35,7 +38,7 @@ resource_name = "IdleDown"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -52,7 +55,7 @@ resource_name = "IdleLeft"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -69,7 +72,7 @@ resource_name = "IdleRight"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -84,7 +87,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -101,7 +104,7 @@ resource_name = "RunDown"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -118,7 +121,7 @@ resource_name = "RunLeft"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -135,7 +138,7 @@ resource_name = "RunRight"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -152,7 +155,7 @@ resource_name = "RunUp"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -223,6 +226,8 @@ transitions = [ "Run", "Idle", SubResource( 21 ), "Idle", "Run", SubResource( 22
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+
+[sub_resource type="CircleShape2D" id=49]
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 4 )
@@ -320,7 +325,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="YSort/Player"]
+[node name="PlayerSprite" type="Sprite" parent="YSort/Player"]
 texture = ExtResource( 1 )
 hframes = 12
 frame = 6
@@ -354,6 +359,22 @@ texture = ExtResource( 3 )
 texture_scale = 0.5
 energy = 0.2
 
+[node name="Earphones" type="Area2D" parent="YSort"]
+position = Vector2( 218, 85 )
+z_index = 1
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Earphones"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Earphones"]
+shape = SubResource( 49 )
+
+[node name="QMark" type="Sprite" parent="YSort/Earphones"]
+position = Vector2( 0.25, -8.8 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="YSort"]
 visible = false
 position = Vector2( 297, 127 )
@@ -363,7 +384,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/StaticBody2D"]
 frames = SubResource( 45 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
@@ -404,13 +425,15 @@ shape = SubResource( 46 )
 
 [node name="Desk" type="StaticBody2D" parent="YSort"]
 position = Vector2( 218, 102 )
+collision_layer = 9
+collision_mask = 9
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="YSort/Desk"]
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Desk"]
 position = Vector2( 0, 1 )
