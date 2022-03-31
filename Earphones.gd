@@ -17,8 +17,17 @@ func _process(delta):
 	
 func _input(event):
 	if event.is_action_pressed("ui_accept") and active:
+		if get_node_or_null('DialogNode') == null:
+			get_tree().paused = true
+			var dialog = Dialogic.start('timeline1')
+			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+			dialog.connect('timeline_end', self, 'unpause')
+			add_child(dialog)
 		$Sprite.visible = false
 		player.set_texture(load("res://player/PlayerEars.png"))
+		
+func unpause(timeline_name):
+	get_tree().paused = false
 	
 func _hp_on_body_entered(body):
 	if body.name == 'Player':
