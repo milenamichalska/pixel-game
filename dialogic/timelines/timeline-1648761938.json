@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, the big day is coming."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Can't believe I'm a part of a company sending rockets to space now."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My project is reusing some code written for this mission, it's almost like I've worked on it."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648761938.json",
+		"name": "big-day"
+	}
+}

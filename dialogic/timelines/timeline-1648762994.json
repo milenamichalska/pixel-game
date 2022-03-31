@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Group chat with my last job colleagues. They are so lovely!"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648762994.json",
+		"name": "chat"
+	}
+}

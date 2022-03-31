@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let's goo! Can't believe I'm only 1 month in the new, dream job, and have some overdue work already!"
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I have to hand over an important report in a few days, but it's ok - I'm a last minute work master."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Quite a few windows opened, let's get rid of them to have clear workplace."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648758465.json",
+		"name": "computer-timeline1"
+	}
+}

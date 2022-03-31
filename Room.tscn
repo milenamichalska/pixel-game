@@ -407,7 +407,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/StaticBody2D"]
 frames = SubResource( 45 )
-frame = 8
+frame = 9
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]

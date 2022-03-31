@@ -1,0 +1,37 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "All of the current projects."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Some of them are once-in-a-lifetime opportunity and such fun at the same time."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I should start a project for a satellite app contest soon, that would be a fast track to my dream."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sending my code to space."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648761670.json",
+		"name": "projects"
+	}
+}

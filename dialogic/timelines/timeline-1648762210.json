@@ -1,0 +1,57 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, I was up to order some food."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Maybe I should eat something before I start working?"
+		},
+		{
+			"choice": "Yup, I need the fuel!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Focus on work first!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I wish, but I'm sooo distracted. Maybe I'm just hungry and I should not fight myself?"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What have we here?"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648762210.json",
+		"name": "food"
+	}
+}
