@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://player/Player.png" type="Texture" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://assets/room_earphones.png" type="Texture" id=9]
 [ext_resource path="res://assets/room_desk_empty.png" type="Texture" id=10]
 [ext_resource path="res://assets/q_mark.png" type="Texture" id=11]
+[ext_resource path="res://assets/chat.png" type="Texture" id=12]
+[ext_resource path="res://assets/tasks.png" type="Texture" id=13]
+[ext_resource path="res://assets/DisposableDroidBB.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://PlanetChat.gd" type="Script" id=15]
+[ext_resource path="res://ComputerInteraction.gd" type="Script" id=16]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
@@ -311,7 +316,21 @@ extents = Vector2( 10, 18 )
 radius = 6.0
 height = 0.0
 
-[node name="City" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=52]
+radius = 7.0
+height = 4.0
+
+[sub_resource type="DynamicFont" id=51]
+size = 5
+extra_spacing_top = -5
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 6
+extra_spacing_top = -3
+font_data = ExtResource( 14 )
+
+[node name="Room" type="Node2D"]
 position = Vector2( -3, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -319,7 +338,7 @@ position = Vector2( -3, 0 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 163, 84 )
+position = Vector2( 197, 68 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -360,9 +379,12 @@ texture_scale = 0.5
 energy = 0.2
 
 [node name="Earphones" type="Area2D" parent="YSort"]
-position = Vector2( 218, 85 )
+position = Vector2( 242, 72 )
 z_index = 1
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="YSort/Earphones"]
 texture = ExtResource( 9 )
@@ -379,28 +401,30 @@ texture = ExtResource( 11 )
 visible = false
 position = Vector2( 297, 127 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/StaticBody2D"]
 frames = SubResource( 45 )
-frame = 8
+frame = 7
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
 polygon = PoolVector2Array( 4, 2, 102, 30, 195, 30, 195, 23 )
 
 [node name="TextureRect" type="TextureRect" parent="YSort"]
-margin_left = 102.0
-margin_top = 22.0
-margin_right = 230.0
-margin_bottom = 150.0
+margin_left = 126.0
+margin_top = 9.0
+margin_right = 254.0
+margin_bottom = 137.0
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NoGoArea" type="StaticBody2D" parent="YSort"]
+position = Vector2( 24, -13 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -410,7 +434,7 @@ __meta__ = {
 polygon = PoolVector2Array( 3, 71, 118, 73, 118, 81, 151, 81, 150, 74, 229, 73, 230, 141, 218, 141, 219, 149, 192, 149, 192, 143, 103, 140, 103, 77, 4, 77, 3, 179, 324, 182, 324, 2, 3, 1 )
 
 [node name="Bed" type="StaticBody2D" parent="YSort"]
-position = Vector2( 138, 116 )
+position = Vector2( 162, 103 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -424,7 +448,7 @@ position = Vector2( 0.5, 5 )
 shape = SubResource( 46 )
 
 [node name="Desk" type="StaticBody2D" parent="YSort"]
-position = Vector2( 218, 102 )
+position = Vector2( 242, 89 )
 collision_layer = 9
 collision_mask = 9
 __meta__ = {
@@ -440,7 +464,7 @@ position = Vector2( 0, 1 )
 shape = SubResource( 47 )
 
 [node name="Chair" type="StaticBody2D" parent="YSort"]
-position = Vector2( 197, 99 )
+position = Vector2( 221, 86 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -452,3 +476,96 @@ texture = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair"]
 position = Vector2( -1, 1 )
 shape = SubResource( 48 )
+
+[node name="ComputerInteraction" type="Area2D" parent="YSort"]
+position = Vector2( 228, 98 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/ComputerInteraction"]
+shape = SubResource( 52 )
+
+[node name="QMark" type="Sprite" parent="YSort/ComputerInteraction"]
+position = Vector2( 11, -7 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+
+[node name="PlanetChat" type="TextureRect" parent="YSort"]
+margin_left = 15.0
+margin_top = 66.0
+margin_right = 94.0
+margin_bottom = 164.0
+texture = ExtResource( 12 )
+expand = true
+script = ExtResource( 15 )
+
+[node name="MyMess" type="Label" parent="YSort/PlanetChat"]
+margin_left = 25.0
+margin_top = 22.0
+margin_right = 65.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0.219608, 0.054902, 0.419608, 1 )
+custom_fonts/font = SubResource( 51 )
+text = "Hii! I got the job at the rocket facility! So happy, starting tomorrow! "
+autowrap = true
+
+[node name="MyMess2" type="Label" parent="YSort/PlanetChat"]
+margin_left = 7.0
+margin_top = 46.0
+margin_right = 47.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.219608, 0.054902, 0.419608, 1 )
+custom_fonts/font = SubResource( 51 )
+text = "Congrats"
+autowrap = true
+
+[node name="MyMess3" type="Label" parent="YSort/PlanetChat"]
+margin_left = 7.0
+margin_top = 57.0
+margin_right = 47.0
+margin_bottom = 74.0
+custom_colors/font_color = Color( 0.219608, 0.054902, 0.419608, 1 )
+custom_fonts/font = SubResource( 51 )
+text = "Wow, Lena, you are so lucky, getting such opportunites!!"
+autowrap = true
+
+[node name="MyMess4" type="Label" parent="YSort/PlanetChat"]
+margin_left = 7.0
+margin_top = 78.0
+margin_right = 47.0
+margin_bottom = 95.0
+custom_colors/font_color = Color( 0.219608, 0.054902, 0.419608, 1 )
+custom_fonts/font = SubResource( 51 )
+text = "Lol, lucky. She's working hard for it. Congratulations!"
+autowrap = true
+
+[node name="Tasks" type="TextureRect" parent="YSort"]
+margin_left = 14.0
+margin_top = 8.0
+margin_right = 115.0
+margin_bottom = 62.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="UseCompTask" type="Label" parent="YSort/Tasks"]
+margin_left = 9.0
+margin_top = 15.0
+margin_right = 79.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0.878431, 0.756863, 0.823529, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "Use computer to work on overdue projects "
+autowrap = true
+
+[node name="UseCompTask2" type="Label" parent="YSort/Tasks"]
+margin_left = 9.0
+margin_top = 28.0
+margin_right = 90.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0.878431, 0.756863, 0.823529, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "Make the dentist appointment"
+autowrap = true
