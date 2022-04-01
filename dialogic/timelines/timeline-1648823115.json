@@ -1,0 +1,63 @@
+{
+	"events": [
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I was so stupid to sign in to this many projects!"
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's just not possible to do everything, even if I give up on sleep."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's serious, haven't done anything important for days, maybe months."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Only few tiny spikes of energy, evenings of hyperfocus that makes other people thinks I'm OK. I really want somebody to notice I'm not."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I was thinking how wonderful it would be in mental hospital, where my only responsibility would be to figure myself out and heal."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I just want to leave."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Have a blanc card."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Even if I would sneak to this Adrianne rocket and go to the Moon."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sneak into the rocket nad become a Moon Princess, I have nothing to lose anyway."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.1",
+		"file": "timeline-1648823115.json",
+		"name": "anime"
+	}
+}

@@ -45,6 +45,62 @@
 			"text": "What have we here?"
 		},
 		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "What should I order?"
+		},
+		{
+			"choice": "Classical Pierogi Ukrainskie",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Ramen with dumplings",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yummy! I'll just browse web in the meantime, I would not done anything in 30 mins anyway."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My boss and everyone are busy right now, because the company is lanching Adrianne rocket soon!"
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So no one noticed I'm behind schedule with my work."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So only problem is I can't force myself to do anything. For days now, I'm only procrastinating."
+		},
+		{
+			"character": "character-1648757074.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "f̵o̵r̵ ̷d̷a̵y̷s̸"
+		},
+		{
 			"event_id": "dialogic_022",
 			"transition_duration": 0.2
 		}
